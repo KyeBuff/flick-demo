@@ -5,7 +5,7 @@ describe('App Component', function() {
 
 	it('Renders the phone case', function() {
 	  	cy.visit('/');
-    	cy.get('.case');
+    	cy.get('.case').should('exist');
   	})
 })
 
