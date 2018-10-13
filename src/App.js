@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div class="case">
-          <div class="case__inner">
+        <div className="case">
+          <div className="case__inner">
           </div>
         </div>
       </div>
