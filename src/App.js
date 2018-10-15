@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import seedDB from './utilities/seed_db';
+import getMedia from './axios/get_media';
+import Slider from "react-slick";
+import Slide from "./components/Slide";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fetchingMedia: false,
+      media: []
     }
-    this.fetchMedia = this.fetchMedia.bind(this);
   }
-  fetchMedia() {
-    this.setState({fetchMedia: true});
+  componentDidMount() {
+    // seedDB();
+    getMedia()
+      .then(({data}) => this.setState({media: data.data}))
+
   }
+
   render() {
+    var settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
     return (
       <div className="container">
         <div className="case">
-          <div className={this.state.fetchingMedia ? "case__inner has-items" : "case__inner"}>
+          <div className="case__inner">
+            <Slider className="slider" {...settings}>
+              {this.state.media.length ? this.state.media.map(m => <Slide media={m}/>) : null}
+            </Slider>
           </div>
         </div>
       </div>

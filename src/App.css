@@ -1,3 +1,12 @@
+html, body {
+  max-height: 100vh;
+  overflow: none;
+}
+
+p {
+  margin: 0;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -21,4 +30,73 @@
   border-radius: 1.5em;
   height: 100%;
   width: 100%;
+}
+
+.slider,
+.slick-list,
+.slick-track,
+.slick-slide > div {
+  height: 100%;
+  width: 100%;
+}
+
+.slick-list {
+  height: 100%;
+}
+
+.slick-track {
+  height: 100%;
+}
+
+ {
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background-color: black;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+}
+
+.slide .title {
+  color: white;
+
+  font-size: 2em;
+  text-align: center;
+}
+.slide img {
+  display: block;
+  max-width: 80%;
+}
+
+@media(max-width: 767px) {
+  body {
+    height: 100vh;
+    max-width: 100vw;
+    overflow: none;
+  }
+  .case {
+    height: 100vh;
+    padding: 0;
+    max-width: 100vw;
+
+    border-radius:0;
+  }
+
+  .case__inner {
+    border-radius: 0;
+  }
+
+  .slider {
+    height:100vh;
+    max-width: 100vw;
+  }
 }
