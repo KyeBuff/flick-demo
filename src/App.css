@@ -32,7 +32,7 @@ p {
   width: 100%;
 }
 
-.slider,
+.media-carousel,
 .slick-list,
 .slick-track,
 .slick-slide > div {
@@ -95,7 +95,7 @@ p {
     border-radius: 0;
   }
 
-  .slider {
+  .media-carousel {
     height:100vh;
     max-width: 100vw;
   }

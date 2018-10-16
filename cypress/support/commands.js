@@ -1,9 +1,8 @@
 import {baseURL as apiURL} from '../../src/axios/axios';
-
-const localhost = 'http://localhost:3000';
+import {localhost} from '../config/statics';
 
 Cypress.Commands.add('seedMediaAndVisit', (seedData='fixture:media') => {
 	cy.server();
-	cy.route('GET', apiURL, seedData);
+	cy.route('GET', `${apiURL}media`, seedData);
 	cy.visit(localhost);	
 });
