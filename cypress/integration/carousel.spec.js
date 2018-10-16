@@ -26,13 +26,11 @@ describe('Carousel component', () => {
 	})
 
 	context('Carousel slide', () => {
+		const title = "Ozark";
+		const apps = ["Netflix"]
 
-		it.only('Renders succesfully when no image is present', () => {
-
+		beforeEach(() => {
 			cy.server();
-
-			const title = "Ozark";
-
 			cy.route('GET', `${apiURL}media`, {
 				data: [{
 					"title": title, 
@@ -40,20 +38,33 @@ describe('Carousel component', () => {
 					"img_url": null, 
 					"isFilm": false, 
 					"genres": ["Series", "\u00a0American Programmes", "\u00a0US TV Dramas", "\u00a0Drama Programmes", "\u00a0Crime TV Dramas"], 
-					"apps": ["Netflix"]
+					"apps": apps
 				}],
 			});
-
 			cy.visit(localhost);
+		});
 
+		it('Renders the title', () => {
+			cy.get('.slick-slide .title')
+				.should('be.visible')
+				.and('contain', title)
+		});
+
+		it.only('Renders the titles apps', () => {
+			cy.get('.slick-slide .apps-list')
+				.should('be.visible')
+				.find('li')
+				.first()
+				.should('have.class', 'netflix-icon')
+		});
+
+		it('Renders succesfully when no image is present', () => {
 			cy.get('.slick-slide .title')
 				.should('be.visible')
 				.and('contain', title)
 
 			cy.get('.slick-slide img')
 				.should('not.be.visible')
-
-
 		})
 
 	})

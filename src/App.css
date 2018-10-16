@@ -12,6 +12,11 @@ button {
   display: block;
 }
 
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -60,3 +65,4 @@ button {
 
 @import './css/carousel.css';
 @import './css/flick-btn.css';
+@import './css/apps.css';
