@@ -5,7 +5,7 @@ describe('Carousel component', () => {
 	it('Renders media on the component render', () => {
 		cy.seedMediaAndVisit();
 		cy.get('.media-carousel .slick-slide')
-			.should('have.length', 21)
+			.should('not.have.length', 0)
 	})
 	it('Displays an error on failure', () => {
 		cy.server();
