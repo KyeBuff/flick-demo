@@ -2,7 +2,7 @@ import {localhost} from '../config/statics';
 import {baseURL as apiURL} from '../../src/axios/axios';
 
 describe('Carousel component', () => {
-	it.only('Renders media on the component render', () => {
+	it('Renders media on the component render', () => {
 		cy.seedMediaAndVisit();
 		cy.get('.media-carousel .slick-slide')
 			.should('have.length', 21)
