@@ -1,0 +1,22 @@
+.flick-btn {
+	padding: .5em;
+	margin: 1em auto;
+	width: calc(100% - 4em);
+
+	font-family: "bangers";
+	font-size: 1.5em;
+
+	background: linear-gradient(#9B59B6, #76448A);
+	border-radius: .1em;
+	box-shadow: 2px 1px 1px 1px #512E5F;
+	color: white;
+
+	cursor: pointer;
+}
+
+.flicked {
+	transition: .1s font-size ease-in-out;
+	height: 49px;
+	width: 279px;
+	font-size: 1em;
+}

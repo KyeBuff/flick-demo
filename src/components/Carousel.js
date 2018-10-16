@@ -14,7 +14,7 @@ export default ({media, onFlick, fetching}) => {
     };
 
     return (
-    	<section>
+    	<section class="media-carousel-container">
 		    <Slider className="slider media-carousel" {...settings}>
 		      {media.map(m => <Slide media={m}/>)}
 		    </Slider>

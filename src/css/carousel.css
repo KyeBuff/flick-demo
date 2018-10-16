@@ -1,0 +1,49 @@
+.media-carousel-container,
+.media-carousel,
+.slick-list,
+.slick-track,
+.slick-slide > div {
+  height: 100%;
+  width: 100%;
+}
+
+.media-carousel-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.media-carousel {
+  max-height: 300px;
+}
+
+.slide {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+}
+
+.slide .title {
+  color: white;
+
+  font-size: 2em;
+  text-align: center;
+}
+.slide img {
+  display: block;
+  max-width: 80%;
+}
+
+@media(max-width: 767px) {
+  .media-carousel {
+    height:100vh;
+    max-width: 100vw;
+  }
+}

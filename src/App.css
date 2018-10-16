@@ -7,6 +7,11 @@ p {
   margin: 0;
 }
 
+button {
+  border: none;
+  display: block;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -14,6 +19,7 @@ p {
 
   height: 100vh;
   width: 100vw;
+
 }
 
 .case {
@@ -26,55 +32,11 @@ p {
 }
 
 .case__inner {
-  background-color: white;
   border-radius: 1.5em;
   height: 100%;
   width: 100%;
-}
+  background-color: #17202A;
 
-.media-carousel,
-.slick-list,
-.slick-track,
-.slick-slide > div {
-  height: 100%;
-  width: 100%;
-}
-
-.slick-list {
-  height: 100%;
-}
-
-.slick-track {
-  height: 100%;
-}
-
- {
-  height: 100%;
-}
-
-.slide {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  background-color: black;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 1em;
-  width: 100%;
-}
-
-.slide .title {
-  color: white;
-
-  font-size: 2em;
-  text-align: center;
-}
-.slide img {
-  display: block;
-  max-width: 80%;
 }
 
 @media(max-width: 767px) {
@@ -94,9 +56,7 @@ p {
   .case__inner {
     border-radius: 0;
   }
-
-  .media-carousel {
-    height:100vh;
-    max-width: 100vw;
-  }
 }
+
+@import './css/carousel.css';
+@import './css/flick-btn.css';
