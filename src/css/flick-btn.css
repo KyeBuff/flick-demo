@@ -1,6 +1,7 @@
 .flick-btn {
+	height: auto;
 	padding: .5em;
-	margin: 1em auto;
+	margin: 0 auto 1em;
 	width: calc(100% - 4em);
 
 	font-family: "bangers";
@@ -11,6 +12,7 @@
 	box-shadow: 2px 1px 1px 1px #512E5F;
 	color: white;
 
+	box-sizing: border-box;
 	cursor: pointer;
 }
 
