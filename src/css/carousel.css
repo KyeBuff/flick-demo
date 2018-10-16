@@ -1,5 +1,4 @@
 .media-carousel-container,
-.media-carousel,
 .slick-list,
 .slick-track,
 .slick-slide > div {
@@ -12,11 +11,6 @@
   justify-content: space-between;
   flex-direction: column;
 }
-
-.media-carousel {
-  max-height: 300px;
-}
-
 .slide {
   display: flex;
 
@@ -26,19 +20,24 @@
 
   box-sizing: border-box;
   height: 100%;
-  padding: 1em;
+  padding: 2em 2em 0;
   width: 100%;
 }
 
 .slide .title {
+  padding: 1em 0;
   color: white;
-
-  font-size: 2em;
+  font-family: 'bangers';
+  font-size: 3em;
   text-align: center;
+
+  box-sizing: border-box;
+  width: 100%;
 }
 .slide img {
   display: block;
-  max-width: 80%;
+  max-height: 100px;
+  max-width: 100%;
 }
 
 @media(max-width: 767px) {

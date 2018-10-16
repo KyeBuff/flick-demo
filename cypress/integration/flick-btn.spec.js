@@ -5,7 +5,7 @@ describe('Flick button component', () => {
 	beforeEach(() => {
 		cy.server();
 	})
-	it.only('Renders all media on click', () => {
+	it('Renders all media on click', () => {
 		cy.visit(localhost);	
 
 		cy.get('.flick-btn')
