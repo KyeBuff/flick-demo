@@ -9,19 +9,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      fetching: false,
       media: [],
       mediaError: '',
     }
+    this.onFlick = this.onFlick.bind(this);
   }
   componentDidMount() {
     // seedDB();
+    this.onFlick();
+  }
+
+  onFlick() {
+    this.setState({fetching: true})
     getMedia()
-      .then(({data}) => this.setState({media: data.data}))
-      .catch(() => this.setState({mediaError: 'Unable to retrieve titles, please try again.'}))
+      .then(({data}) => this.setState({media: data.data, fetching: false}))
+      .catch(() => this.setState({mediaError: 'Unable to retrieve titles, please try again.', fetching: false}))
   }
 
   render() {
-    const {media, mediaError} = this.state;
+    const {media, mediaError, fetching} = this.state;
     return (
       <div className="container">
         <div className="case">
@@ -29,7 +36,9 @@ class App extends Component {
             {!mediaError ?
               media.length ?
               <Carousel 
+                fetching={fetching}
                 media={media} 
+                onFlick={this.onFlick}
               /> : null
             : <AppError message={mediaError} />}
           </div>

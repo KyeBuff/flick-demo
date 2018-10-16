@@ -1,8 +1,9 @@
 import React from 'react';
 import Slider from "react-slick";
 import Slide from "./Slide";
+import FlickButton from "./FlickButton";
 
-export default ({media}) => {
+export default ({media, onFlick, fetching}) => {
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -13,8 +14,11 @@ export default ({media}) => {
     };
 
     return (
-	    <Slider className="slider media-carousel" {...settings}>
-	      {media.map(m => <Slide media={m}/>)}
-	    </Slider>
+    	<section>
+		    <Slider className="slider media-carousel" {...settings}>
+		      {media.map(m => <Slide media={m}/>)}
+		    </Slider>
+		    <FlickButton disabled={fetching} onClick={onFlick} />
+		</section>
     );
 };
