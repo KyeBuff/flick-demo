@@ -29,7 +29,7 @@ describe('Carousel component', () => {
 		const title = "Ozark";
 		const apps = ["Netflix"]
 
-		beforeEach(() => {
+		it('Renders succesfully when no image is present', () => {
 			cy.server();
 			cy.route('GET', `${apiURL}media`, {
 				data: [{
@@ -42,23 +42,6 @@ describe('Carousel component', () => {
 				}],
 			});
 			cy.visit(localhost);
-		});
-
-		it('Renders the title', () => {
-			cy.get('.slick-slide .title')
-				.should('be.visible')
-				.and('contain', title)
-		});
-
-		it.only('Renders the titles apps', () => {
-			cy.get('.slick-slide .apps-list')
-				.should('be.visible')
-				.find('li')
-				.first()
-				.should('have.class', 'netflix-icon')
-		});
-
-		it('Renders succesfully when no image is present', () => {
 			cy.get('.slick-slide .title')
 				.should('be.visible')
 				.and('contain', title)

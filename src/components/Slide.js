@@ -7,6 +7,6 @@ export default ({media}) => (
 	<div className="slide">
 		<p className="title">{media.title}</p>
 		{media.img_url ?<img src={media.img_url} alt={media.title} /> : null }
-		<Apps apps={media.apps}/>
+		{media.apps && media.apps.length ?<Apps apps={media.apps}/> : null}
 	</div>
 );
