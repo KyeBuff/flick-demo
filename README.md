@@ -13,7 +13,7 @@ Despite this being just a simple demonstration, I wanted to build the app using 
 
 Through building my own tests in this demonstration, I have learned how to:
 
-* Use Cypress' built in functions to create unit tests
+* Use Cypress' built in functions to create tests
 * Use DOM queries to select elements and test their state
 * Use functions like beforeEach and write custom commands to reduce repeated code in my tests
 * Use stubs to simulate E2E testing and provide reliable, easy to test responses
